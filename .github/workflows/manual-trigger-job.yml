@@ -11,6 +11,10 @@ jobs:
       uses: actions/checkout@main
     - name: Install az ml extension
       run: az extension add -n ml -y
+    - name: Check Azure CLI and ML extension
+      run: |
+        az version
+        az extension show --name ml
     - name: Azure login
       uses: azure/login@v2
       with:
